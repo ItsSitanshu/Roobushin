@@ -82,4 +82,10 @@ cleart_shell_sh:
 	rm -fv tests/*.prc
 cleart_shell_cmd:
 	rm -f tests/*.prc
-# Unsure if rm is on all windows platforms (will be checked in makefile version 1.1)
+licence: licence_$(SHELL_NAME)
+licence_sh:
+	cat LICENCE_CONTENT.txt
+licence_cmd:
+	cat LICENCE_CONTENT.txt
+# Unsure if cat is on all windows platforms (will be checked in makefile version 1.1+)
+# Unsure if rm is on all windows platforms (will be checked in makefile version 1.1+)
