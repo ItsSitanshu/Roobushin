@@ -1,0 +1,6 @@
+@import "std/outin"
+
+main => main() {
+    int var = 0;
+    print(var);
+}

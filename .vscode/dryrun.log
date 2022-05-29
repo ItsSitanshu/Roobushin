@@ -1,0 +1,5 @@
+make --dry-run --keep-going --print-directory
+make: Entering directory '/home/tanshu/Desktop/Dev/Roobushin'
+cd out/ && gcc -c ../src/*.c -std=c99 -O3 -I../src/*.h -g3 -ggdb && cd .. && gcc out/*.o -o roobushin -std=c99 -O3 -I../src/*.h -g3 -ggdb
+make: Leaving directory '/home/tanshu/Desktop/Dev/Roobushin'
+ 
