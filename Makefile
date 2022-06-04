@@ -1,10 +1,13 @@
+# Roobushin Copyright (C) 2022 Sitanshu Shrestha(bit.ly/sitanshu) / GNU General Public License
+
 # ! VERSION - 1.0
 
 # Target declaration
 .phony = all clean slean_shell_cmd clean_shell_sh tests
 
 # Declarations
-EXECUTABLE_NAME ?= roobushin
+EXECUTABLE_NAME ?= roobushin.exe
+EXECUTABLE_NAME_MPF ?= mpf.exe
 
 # Determine if file has root access
 ROOT = $(shell whoami) # Lates versions will implment use cases for this
@@ -63,20 +66,21 @@ ifeq ($(OS_NAME), BSD)
 endif
 
 SRC_PATH = ../src
-SRC_FILES = $(SRC_PATH)/*.c
+SRC_FILES = $(SRC_PATH)/main.c \
+			$(SRC_PATH)/parser.c
 INCLUDE_PATH = ../src
 INCLUDE_FILES = $(INCLUDE_PATH)/*.h
 BUILD_PATH = out
 CFLAGS = -std=c99 -O3 -I$(INCLUDE_FILES) -g3 -ggdb
 OBJS = $(BUILD_PATH)/*.o
 all:
-	cd $(BUILD_PATH)/ && $(CC) -c $(SRC_FILES) $(CFLAGS) && cd .. && $(CC) $(OBJS) -o $(EXECUTABLE_NAME) $(CFLAGS)
+	cd $(BUILD_PATH)/ && $(CC) -c $(SRC_FILES) $(CFLAGS) && cd .. && $(CC) $(OBJS) -o $(EXECUTABLE_NAME) $(CFLAGS) && $(CC) src/mpf.c -o $(EXECUTABLE_NAME_MPF) $(CFLAGS)
 # Clean everything
 clean: clean_shell_$(SHELL_NAME)
 clean_shell_sh:
-	rm -fv $(BUILD_PATH)/*.o roobushin
+	rm -fv $(BUILD_PATH)/*.o roobushin.exe mpf.exe
 clean_shell_cmd:
-	rm -f $(BUILD_PATH)/*.o roobushin
+	rm -f $(BUILD_PATH)/*.o roobushin.exe mpf.exe
 ct: cleart_shell_$(SHELL_NAME)
 cleart_shell_sh:
 	rm -fv tests/*.prc

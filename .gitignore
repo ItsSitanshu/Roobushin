@@ -33,3 +33,7 @@
 
 # .vscode
 .vscode/*
+roobushin.exe
+
+# roo specefic
+*.prc
