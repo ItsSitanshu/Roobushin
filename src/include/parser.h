@@ -4,6 +4,9 @@
 #include "../include/lexer.h"
 #include "../include/AST.h"
 
+#include "stdio.h"
+#include "stdlib.h"
+
 typedef struct PARSER_STRUCT {
     lexer_T* lexer;
     token_T* cur_tok;
