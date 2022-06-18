@@ -1,8 +1,8 @@
 #ifndef LEXER_H
 #define LEXER_H
 
-#include "token.h"
-#include "macros.h"
+#include "../include/token.h"
+#include "../include/macros.h"
 
 #include "stdio.h"
 #include "string.h"

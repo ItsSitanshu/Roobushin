@@ -1,6 +1,6 @@
-#include "lexer.h"
-#include "token.h"
-#include "macros.h"
+#include "include/lexer.h"
+#include "include/token.h"
+#include "include/macros.h"
 
 #include "stdio.h"
 #include "string.h"

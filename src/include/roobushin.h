@@ -1,10 +1,10 @@
 #ifndef ROOBUSHIN_H
 #define ROOBUSHIN_H
 
-#include "token.h"
-#include "lexer.h"
-#include "macros.h"
-#include "io.h"
+#include "../include/token.h"
+#include "../include/lexer.h"
+#include "../include/macros.h"
+#include "../include/io.h"
 
 #include "stdio.h"
 #include "string.h"
