@@ -7,9 +7,11 @@ typedef struct AST_STRUCT {
         AST_FUNCTION_DEFINITON,
         AST_DEFFINITION_TYPE,
         AST_VARIABLE,
-        AST_STATEMENTM
-        AST_NOOP,
+        AST_STATEMENT,
+        AST_NOOP
     } type;
 } AST_T;
+
+AST_T* init_ast(int type);
 
 #endif
