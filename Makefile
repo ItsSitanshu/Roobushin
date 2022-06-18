@@ -66,21 +66,20 @@ ifeq ($(OS_NAME), BSD)
 endif
 
 SRC_PATH = ../src
-SRC_FILES = $(SRC_PATH)/main.c \
-			$(SRC_PATH)/parser.c
+SRC_FILES = $(SRC_PATH)/*.c
 INCLUDE_PATH = ../src
 INCLUDE_FILES = $(INCLUDE_PATH)/*.h
 BUILD_PATH = out
 CFLAGS = -std=c99 -O3 -I$(INCLUDE_FILES) -g3 -ggdb
 OBJS = $(BUILD_PATH)/*.o
 all:
-	cd $(BUILD_PATH)/ && $(CC) -c $(SRC_FILES) $(CFLAGS) && cd .. && $(CC) $(OBJS) -o $(EXECUTABLE_NAME) $(CFLAGS) && $(CC) src/mpf.c -o $(EXECUTABLE_NAME_MPF) $(CFLAGS)
+	cd $(BUILD_PATH)/ && $(CC) -c $(SRC_FILES) $(CFLAGS) && cd .. && $(CC) $(OBJS) -o $(EXECUTABLE_NAME) $(CFLAGS)
 # Clean everything
 clean: clean_shell_$(SHELL_NAME)
 clean_shell_sh:
-	rm -fv $(BUILD_PATH)/*.o roobushin.exe mpf.exe
+	rm -fv $(BUILD_PATH)/*.o roobushin.exe
 clean_shell_cmd:
-	rm -f $(BUILD_PATH)/*.o roobushin.exe mpf.exe
+	rm -f $(BUILD_PATH)/*.o roobushin.exe
 ct: cleart_shell_$(SHELL_NAME)
 cleart_shell_sh:
 	rm -fv tests/*.prc
@@ -91,5 +90,8 @@ licence_sh:
 	cat LICENCE_CONTENT.txt
 licence_cmd:
 	cat LICENCE_CONTENT.txt
+install:
+	make
+	cp ./roobushin.exe /usr/local/bin/roobushin
 # Unsure if cat is on all windows platforms (will be checked in makefile version 1.1+)
 # Unsure if rm is on all windows platforms (will be checked in makefile version 1.1+)

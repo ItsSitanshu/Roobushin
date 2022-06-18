@@ -1,0 +1,3 @@
+int:main => (argc: int, argv: list<string>) {
+    return 0;
+}
