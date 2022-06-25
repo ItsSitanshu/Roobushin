@@ -3,6 +3,7 @@
 
 #include "../include/token.h"
 #include "../include/lexer.h"
+#include "../include/parser.h"
 #include "../include/macros.h"
 #include "../include/io.h"
 
