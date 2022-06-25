@@ -14,7 +14,7 @@ void list_push(list_T* list, void* item) {
     if (!list->items) {
         list->items = calloc(1, list->item_size);
     } else {
-        list->items = realloc(list->items, (list->size * list->items_sizes));
+        list->items = realloc(list->items, (list->size * list->item_size));
     }
 
     list->items[list->size] = item;
