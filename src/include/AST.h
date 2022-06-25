@@ -1,6 +1,8 @@
 #ifndef AST_H
 #define AST_H 
 
+#include "../include/list.h"
+
 typedef struct AST_STRUCT {
     enum {
         AST_COMPOUND,
